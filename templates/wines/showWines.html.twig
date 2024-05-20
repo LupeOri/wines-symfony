@@ -1,0 +1,25 @@
+{% extends "wines/baseWine.html.twig" %}
+{% block contenido %}
+
+	<h2>Listado de vinos</h2>
+	<div class="row row-cols-1 row-cols-md-2">
+		{% for wine in wines %}
+			<div class="col mb-4">
+				<div class="card" style="width: 18rem;">
+					<img src="{{ wine.image }}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">{{ wine.name }}</h5>
+						<p class="card-text">{{ wine.id }}</p>
+						<p class="card-text">{{ wine.apellation }}</p>
+						<p class="card-text">{{ wine.winery }}</p>
+						<p class="card-text">{{ wine.grape }}</p>
+						<p class="card-text">{{ wine.vintage }}</p>
+						<p class="card-text">{{ wine.price }}</p>
+						<a href="#" class="btn btn-primary">Más Info</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}
